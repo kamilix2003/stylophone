@@ -10,13 +10,17 @@ for c = C(1:size(C, 2))
 
     T = period(R_a, R_b, c);
     frequency = 1./T;
-    % loglog(R_b, frequency);
-    semilogx(R_b, frequency, "DisplayName", c_legend);
+    loglog(R_b, frequency, "DisplayName", c_legend);
+    % semilogx(R_b, frequency, "DisplayName", c_legend);
     % semilogy(R_b, frequency);
     legend("show");
     grid on;
 hold on;
 end
+title("Frequency vs resistance R_b")
+subtitle("depending on capacitance C")
+xlabel("Resistance R_b [\Omega]")
+ylabel("Frequency [Hz]")
 hold off;
 end
 
