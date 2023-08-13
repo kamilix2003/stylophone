@@ -22,6 +22,7 @@ subtitle("depending on capacitance C")
 xlabel("Resistance R_b [\Omega]")
 ylabel("Frequency [Hz]")
 yline(20000, "Color","red", "LineWidth", 1, "LineStyle","--", "DisplayName", "Hearing range");
+yline(20, "Color","red", "LineWidth", 1, "LineStyle","--", "HandleVisibility","off");
 legend("Location","southwest")
 hold off;
 end

@@ -18,8 +18,8 @@ Stylophone was invented by Brian Jarvis of Dubreq Studios in 1967 and initialy w
 Number of widly known artists used stylophone in the past like The White Stripes, David Bowie or Jarvis Cocker. These days stylophone can be heard in various genres or in full stylophone covers of popular songs.
 
 ## 555
-555 integrated circuit, designed in 1971 by Hans Camenzind, is said to be the most popular integrated circuit ever made.
-## notes
+555 integrated circuit, designed in 1971 by Hans Camenzind, is said to be the most popular integrated circuit ever made. 555 can be used in many configuration like: oscilators, schmit triggers, SR latches and many more.
+## Design
 
 ## Sources
 - https://en.wikipedia.org/wiki/Stylophone
