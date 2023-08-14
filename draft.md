@@ -32,3 +32,5 @@ Number of widly known artists used stylophone in the past like The White Stripes
 - https://en.wikipedia.org/wiki/Music_and_mathematics
 - https://en.wikipedia.org/wiki/Reference_tone
 - https://en.wikipedia.org/wiki/Equal_temperament
+- https://en.wikipedia.org/wiki/Stylophone#/media/File:Modern_Stylophone.JPG
+- https://andymurkin.wordpress.com/2011/12/31/stylophones/
