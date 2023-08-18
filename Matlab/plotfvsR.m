@@ -26,5 +26,6 @@ yline(20000, "Color","red", "LineWidth", 1, "LineStyle","--", "DisplayName", "He
 yline(20, "Color","red", "LineWidth", 1, "LineStyle","--", "HandleVisibility","off");
 legend("Location","southwest")
 hold off;
+print('../latex/img/fr_plot', '-depsc');
 end
 

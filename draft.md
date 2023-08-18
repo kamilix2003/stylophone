@@ -4,13 +4,13 @@
 Stylophone, 555 timer, synthesizer
 
 ## Introduction
-Stylophone is pocket synthesizer which uses voltage-controlled oscilator controlled with stylus touching metal keyboard on printed circuit board which closes circuit in different position of resistor array.
+Stylophone is pocket synthesizer which uses voltage-controlled oscilator controlled with stylus which closes circuit in different position on metal keyboard on printed circuit board.
 
 ### Goal
-Goal of this project is to recreate basic functionality of original stylophone using 555 integrated circuit, make it portable by using batery as power source, including low-profile speaker and audio out jack.
+Goal of this project is to recreate basic functionality of stylophone using 555 integrated circuit, make it portable by using batery as power source.
 
 ### Reason
-I wanted to build stylophone with 555 timer for some time yet I did't have sufficient knowladge and understanding of electronics to do it but now with knowladge and skills acquired during first year of my studies I can build stylophone and test my what i learned.
+I wanted to build stylophone with 555 timer for some time yet I did't have sufficient knowladge and understanding of electronics to do it but now with knowladge and skills acquired during first year of my studies I can build stylophone.
 
 ### History
 Stylophone was invented by Brian Jarvis of Dubreq Studios in 1967 and initialy was produced from 1968 to 1975, but in 2007 production of stylophone was relunched. Version of stylophone from 2007 used digital electronics unlike original but in 2020 Dubreq released new analog version of stylophone which uses 555 timer integrated circuit as its heart.

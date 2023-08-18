@@ -1,0 +1,25 @@
+\begin{circuitikz}[scale=1.5, transform shape, use fpu reciprocal]
+	\ctikzset{resistors/scale=0.4}
+	\ctikzset{capacitors/scale=0.4}
+	\ctikzset{multipoles/dipchip/pin spacing = 0.5}
+	\ctikzset{bipoles/oscope/waveform = square}
+	
+	\ctikzset{multipoles/thickness=4}
+	\ctikzset{multipoles/external pins thickness=2}
+	\draw (0,0) node[dipchip,
+	num pins=8,
+	external pins width=0.3,
+	external pad fraction=4 ](C){555};
+	\draw (C.pin 1) -- ++ (-0.5, 0) node[ground]{};
+	\draw (C.pin 8) -- ++ (0.5, 0) node[vcc,  font=\tiny]{VCC};
+	\draw (C.pin 7) to[short] ++ (0.5, 0) to[R, l_=$R_a$, font = \tiny] ++ (0, 0.7);
+	\draw (C.pin 6) to[short] ++ (0.5, 0) to[R, l_=$R_b$, font = \tiny] ++ (0, 0.7);
+	\draw (C.pin 6) ++ (0.5, 0) to[C, l_=$C$, font = \tiny] ++ (1, 0) node[ground]{};
+	\draw (C.pin 6) ++ (0.5, 0) -- ++ (0, -1.25) -- ++ (-3.52, 0) to[short] ++ (0, 1.95) -- (C.pin 2);
+	\draw (C.pin 6) ++ (0.5, 0) node[circ]{};
+	\draw (C.pin 3) ++ (-1.25, 0) node[oscopeshape](O){};
+	\draw (C.pin 3) ++ (-0.5, 0) node[jump crossing](X){};
+	\draw (C.pin 3) -- (X.east);
+	\draw (O.right) -- (X.west);
+	\draw (O.center) ++ (0, 0.5) node[anchor=base, font=\tiny]{\texttt{Output}};
+\end{circuitikz}

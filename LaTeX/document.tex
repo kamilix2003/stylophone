@@ -1,6 +1,7 @@
-\documentclass[english,12pt,a4paper]{article}
+\documentclass[english,10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{float}
 \usepackage{babel}
 \usepackage{amssymb}
 \usepackage{graphicx}
@@ -12,7 +13,6 @@
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage[european resistors]{circuitikz}
-\title{555 stylophone}
 \hypersetup{
 	pdfborder = false,
 	colorlinks=true,
@@ -22,10 +22,113 @@
 	pdftitle={Overleaf Example},
 	pdfpagemode=FullScreen,
 }
+\title{Stylophone\\
+	\normalsize 555 timer}
 \author{Kamil Chaj}
-\date{}
+\date{2023}
+
 \begin{document}
 	\maketitle
 	
-	Hello there!
+	\section{Introduction}
+	
+	\subsection{Stylophone}
+	Stylophone is pocket synthesizer which uses voltage-controlled oscilator controlled with stylus which closes circuit in different position on metal keyboard on printed circuit board.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{img/Modern_Stylophone.jpg}
+		\caption{Stylophone 2007}
+	\end{figure}
+	
+	\subsection{Goal}
+	Goal of this project is to recreate basic functionality of stylophone using 555 integrated circuit, make it portable by using batery as power source.
+	
+	\subsection{Reason}
+	I wanted to build stylophone with 555 timer for some time yet I did't have sufficient knowladge and understanding of electronics to do it but now with knowladge and skills acquired during first year of my studies I can build stylophone.
+	
+	\subsection{History}
+	Stylophone was invented by Brian Jarvis of Dubreq Studios in 1967 and initialy was produced from 1968 to 1975, but in 2007 production of stylophone was relunched. Version of stylophone from 2007 used digital electronics unlike original but in 2020 Dubreq released new analog version of stylophone which uses 555 timer integrated circuit as its heart.
+	
+	Number of widly known artists used stylophone in the past like The White Stripes, David Bowie or Jarvis Cocker. These days stylophone can be heard in various genres or in full stylophone covers of popular songs.
+	
+	\subsection{555 integrated circuit}
+	555 integrated circuit, designed in 1971 by Hans Camenzind, is said to be the most popular integrated circuit ever made. 555 can be used in many configuration like: oscilators, schmit triggers, SR latches and many more.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{img/Signetics_NE555N.JPG}
+		\caption{Signetics NE555N}
+	\end{figure}
+		
+	Output of 555 IC can be either high or low it is dependent on state of flip-flop which is controller with 2 comparators, when voltage on pin 2(trigger) is smaller than 1/3 of supply voltage comparator sets flip-flip and output is high and stays that way until flip-flop is reset by pin 4(reset) or when voltage on pin 6(threshold) is greater than 2/3 of supply voltage.
+		
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{img/555_esquema.png}
+		\caption{Signetics NE555 internal block diagram}
+	\end{figure}
+		
+	\section{Design}
+	\subsection{555 voltage controlled oscillator}
+	
+	555 documentation provides example circuit for astable oscillator and formulas for properties of oscillations. Which is sufficient for our application in stylophone.
+	
+	\begin{equation}\label{eq:1}
+		t_1 = A \cdot (R_a + R_b) C
+	\end{equation}
+	
+	\begin{equation}\label{eq:2}
+		t_2 = A \cdot R_b \space C
+	\end{equation}
+	
+	\begin{equation}\label{eq:3}
+		T = t_1 + t_2 
+	\end{equation}
+	
+	\begin{equation}\label{eq:4}
+		D = \dfrac{R_b}{R_a + 2R_b}
+	\end{equation}
+	
+	$t_1$ - charge time, $t_2$ - discharge time, $T$ - period, $D$ - duty cycle \\
+	$A = 0.693$ is constant provided in documentation
+	G
+	\begin{figure}[H]
+		\centering
+		\include{555_oscillator.tex}
+		\caption{Simplified configuration for astable mode of operation}
+	\end{figure}
+	
+	\subsubsection{Duty cycle}
+	Let's start with finding suitable component considering duty cycle first because it is dependent on least variables.
+	We want duty cycle to be as close to 50\% as it is possible at least for now. According to formula \ref{eq:1} we can see that
+	\begin{equation}
+		\lim_{R_a \to 0} \dfrac{R_b}{R_a + 2R_b} = 0.5
+	\end{equation}
+	or
+	\begin{equation}
+		\lim_{R_b \to \infty} \dfrac{R_b}{R_a + 2R_b} = 0.5
+	\end{equation}
+	
+	Knowing that we should choose resistance $R_a$ to be quite small and resistance $R_b$ to be much greater than $R_a$. 
+	By plotting Duty cycle against resistance $R_b$ with different resistances $R_a$ we can see that in order for duty cycle to be above 48\% $R_b$ must be approximately one magnitude greater than $R_a$.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img/dc_plot.eps}
+	\end{figure}
+	
+	Before choosing $R_a$ we need to consider maximum power dissipation of the resistor and supply voltage. Resistor $R_a$ with value of 10$\Omega$ or smaller would be great to achieve 50\% duty cycle but quickly we would realized that something is smelling weird and is really hot.
+	
+	Power dissipation of a resistor can be calculated using formula.
+	\begin{equation}
+		P = \frac{V^2}{R}
+	\end{equation}
+	Looking first at the voltage, 555 IC requires at least 4.5V and supply voltage will not exceed 6.5V. The most common resistors used in electronic circuits have power rating of 0.25W or 1W.
+	
+	Knowing all restrictions we can choose correct resistor $R_a$, in case of maximal power 0.25 Watts it would be 220 $\Omega$ resistor and in case of 1 Watt 47 $\Omega$.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img/pr_plot.eps}
+	\end{figure}
 \end{document}
