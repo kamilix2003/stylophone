@@ -29,6 +29,8 @@
 
 \begin{document}
 	\maketitle
+	\tableofcontents
+	\newpage
 	
 	\section{Introduction}
 	
@@ -69,9 +71,9 @@
 	\end{figure}
 		
 	\section{Design}
-	\subsection{555 voltage controlled oscillator}
+	\subsection{555 astable operation}
 	
-	555 documentation provides example circuit for astable oscillator and formulas for properties of oscillations. Which is sufficient for our application in stylophone.
+	555 documentation provides example circuit for astable mode of operations and formulas for properties of oscillations.
 	
 	\begin{equation}\label{eq:1}
 		t_1 = A \cdot (R_a + R_b) C
@@ -99,7 +101,7 @@
 	\end{figure}
 	
 	\subsubsection{Duty cycle}
-	Let's start with finding suitable component considering duty cycle first because it is dependent on least variables.
+	Let's start with finding suitable component values considering duty cycle first because it is dependent on least amount of variables.
 	We want duty cycle to be as close to 50\% as it is possible at least for now. According to formula \ref{eq:1} we can see that
 	\begin{equation}
 		\lim_{R_a \to 0} \dfrac{R_b}{R_a + 2R_b} = 0.5
@@ -125,10 +127,34 @@
 	\end{equation}
 	Looking first at the voltage, 555 IC requires at least 4.5V and supply voltage will not exceed 6.5V. The most common resistors used in electronic circuits have power rating of 0.25W or 1W.
 	
-	Knowing all restrictions we can choose correct resistor $R_a$, in case of maximal power 0.25 Watts it would be 220 $\Omega$ resistor and in case of 1 Watt 47 $\Omega$.
-	
+	Knowing all restrictions we can choose the most suitable resistor $R_a$
+	\begin{itemize}
+		\item $R_a = 47\Omega$ for $P_{max} = 1W$
+		\item $R_a = 220\Omega$ for $P_{max} = 0.25W$
+	\end{itemize}
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.7\textwidth]{img/pr_plot.eps}
 	\end{figure}
+	\subsubsection{Frequency range}
+	Now let's consider value of capacitor C in our circuit. 
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img/fr_plot.eps}
+	\end{figure}
+	
+	Stylophone's keyboard has 20 notes, one full octave, 3 notes from octave below and 5 notes above. frequency of each note can be calculated using one of following formulas
+	
+	\begin{equation}
+		f = 2^{\frac{n}{12}} \cdot 440 \text{Hz}
+	\end{equation}
+	where $n$ is note number
+	\begin{equation}
+		f = 2^{\frac{p-69}{12}}  \cdot 440 \text{Hz}
+	\end{equation}
+	where $p$ is MIDI note number
+	
+	
+	
 \end{document}

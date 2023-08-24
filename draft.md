@@ -20,6 +20,9 @@ Number of widly known artists used stylophone in the past like The White Stripes
 ## 555
 555 integrated circuit, designed in 1971 by Hans Camenzind, is said to be the most popular integrated circuit ever made. 555 can be used in many configuration like: oscilators, schmit triggers, SR latches and many more.
 ## Design
+### duty cycle
+### frequency range
+
 
 ## Sources
 - https://en.wikipedia.org/wiki/Stylophone
