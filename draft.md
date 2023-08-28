@@ -22,7 +22,11 @@ Number of widly known artists used stylophone in the past like The White Stripes
 ## Design
 ### duty cycle
 ### frequency range
-
+linear frequency of resistance when small C 
+https://en.wikipedia.org/wiki/Linear_approximation
+### envelope ??!
+shape attack and decay
+    https://youtu.be/aGFb7JbTdNU?si=FtGGWNiHtQH9gEwX
 
 ## Sources
 - https://en.wikipedia.org/wiki/Stylophone
