@@ -43,10 +43,7 @@
 	\end{figure}
 	
 	\subsection{Goal}
-	Goal of this project is to recreate basic functionality of stylophone using 555 integrated circuit, make it portable by using batery as power source.
-	
-	\subsection{Reason}
-	I wanted to build stylophone with 555 timer for some time yet I did't have sufficient knowladge and understanding of electronics to do it but now with knowladge and skills acquired during first year of my studies I can build stylophone.
+	Voltage controlled oscillator compatible with octave per volt standard, generation of saw tooth and square wave, vibrato effect and supplied with single pole supply.	
 	
 	\subsection{History}
 	Stylophone was invented by Brian Jarvis of Dubreq Studios in 1967 and initialy was produced from 1968 to 1975, but in 2007 production of stylophone was relunched. Version of stylophone from 2007 used digital electronics unlike original but in 2020 Dubreq released new analog version of stylophone which uses 555 timer integrated circuit as its heart.
@@ -69,6 +66,20 @@
 		\includegraphics[width=0.6\textwidth]{img/555_esquema.png}
 		\caption{Signetics NE555 internal block diagram}
 	\end{figure}
+	
+	\section{Design}
+	\subsection{VCO}
+	In our circuit we are going to utilize similar idea to example oscillator circuit from documentation of 555 IC. When voltage over capacitor is greater than $\frac{2}{3}$ of supply voltage output is high and when it falls below $\frac{1}{3}$ of supply voltage output is low.
+	
+	This way we can generate many different waveforms like sawtooth or square depending on speed of charging and discharing of the capacitor.
+	
+	In example circuit from documentation resistance was used to control charging and discharging of capacitor which doesn't satisfies us, we want to use voltage therefor instead of resistors we are going to used bipolar junction transistors.
+	\subsubsection{Capacitor}
+	
+	\begin{equation}
+		i = C \dfrac{dV_c}{dt}
+	\end{equation}
+	
 		
 
 	

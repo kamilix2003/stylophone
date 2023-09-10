@@ -41,3 +41,7 @@ shape attack and decay
 - https://en.wikipedia.org/wiki/Equal_temperament
 - https://en.wikipedia.org/wiki/Stylophone#/media/File:Modern_Stylophone.JPG
 - https://andymurkin.wordpress.com/2011/12/31/stylophones/
+- https://www.schmitzbits.de/
+- https://www.youtube.com/watch?v=ZWJhApUmfEU
+- https://www.ittc.ku.edu/~jstiles/412/handouts/7.3%20The%20BJT%20differntial%20pair/section%207_3%20The%20BJT%20Differential%20Pair%20lecture.pdf
+

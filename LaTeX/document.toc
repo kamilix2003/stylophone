@@ -2,10 +2,8 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Stylophone}{2}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Goal}{2}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Reason}{2}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}History}{2}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}555 integrated circuit}{2}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.3}History}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}555 integrated circuit}{2}{subsection.1.4}%
 \contentsline {section}{\numberline {2}Design}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}555 astable operation}{3}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Duty cycle}{4}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Frequency range}{6}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1}VCO}{3}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Capacitor}{4}{subsubsection.2.1.1}%
